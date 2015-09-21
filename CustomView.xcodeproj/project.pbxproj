@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		8FD922A01BB0CDBB00098964 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9229F1BB0CDBB00098964 /* main.m */; };
 		8FD922A31BB0CDBB00098964 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD922A21BB0CDBB00098964 /* AppDelegate.m */; };
-		8FD922A61BB0CDBB00098964 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD922A51BB0CDBB00098964 /* ViewController.m */; };
 		8FD922A91BB0CDBB00098964 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FD922A71BB0CDBB00098964 /* Main.storyboard */; };
 		8FD922AB1BB0CDBB00098964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD922AA1BB0CDBB00098964 /* Assets.xcassets */; };
 		8FD922AE1BB0CDBB00098964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FD922AC1BB0CDBB00098964 /* LaunchScreen.storyboard */; };
 		8FD922B91BB0CDBB00098964 /* CustomViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD922B81BB0CDBB00098964 /* CustomViewTests.m */; };
+		8FD922C51BB0CF2000098964 /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD922C41BB0CF2000098964 /* ScannerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		8FD922C81BB0CFCD00098964 /* ScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD922C71BB0CFCD00098964 /* ScannerView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +32,6 @@
 		8FD9229F1BB0CDBB00098964 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8FD922A11BB0CDBB00098964 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8FD922A21BB0CDBB00098964 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8FD922A41BB0CDBB00098964 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8FD922A51BB0CDBB00098964 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8FD922A81BB0CDBB00098964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FD922AA1BB0CDBB00098964 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FD922AD1BB0CDBB00098964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +39,10 @@
 		8FD922B41BB0CDBB00098964 /* CustomViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD922B81BB0CDBB00098964 /* CustomViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomViewTests.m; sourceTree = "<group>"; };
 		8FD922BA1BB0CDBB00098964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FD922C31BB0CF2000098964 /* ScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
+		8FD922C41BB0CF2000098964 /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
+		8FD922C61BB0CFCD00098964 /* ScannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerView.h; sourceTree = "<group>"; };
+		8FD922C71BB0CFCD00098964 /* ScannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,13 +86,15 @@
 			children = (
 				8FD922A11BB0CDBB00098964 /* AppDelegate.h */,
 				8FD922A21BB0CDBB00098964 /* AppDelegate.m */,
-				8FD922A41BB0CDBB00098964 /* ViewController.h */,
-				8FD922A51BB0CDBB00098964 /* ViewController.m */,
+				8FD922C31BB0CF2000098964 /* ScannerViewController.h */,
+				8FD922C41BB0CF2000098964 /* ScannerViewController.m */,
 				8FD922A71BB0CDBB00098964 /* Main.storyboard */,
 				8FD922AA1BB0CDBB00098964 /* Assets.xcassets */,
 				8FD922AC1BB0CDBB00098964 /* LaunchScreen.storyboard */,
 				8FD922AF1BB0CDBB00098964 /* Info.plist */,
 				8FD9229E1BB0CDBB00098964 /* Supporting Files */,
+				8FD922C61BB0CFCD00098964 /* ScannerView.h */,
+				8FD922C71BB0CFCD00098964 /* ScannerView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -211,8 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FD922A61BB0CDBB00098964 /* ViewController.m in Sources */,
 				8FD922A31BB0CDBB00098964 /* AppDelegate.m in Sources */,
+				8FD922C81BB0CFCD00098964 /* ScannerView.m in Sources */,
+				8FD922C51BB0CF2000098964 /* ScannerViewController.m in Sources */,
 				8FD922A01BB0CDBB00098964 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +406,7 @@
 				8FD922BF1BB0CDBB00098964 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FD922C01BB0CDBB00098964 /* Build configuration list for PBXNativeTarget "CustomViewTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +415,7 @@
 				8FD922C21BB0CDBB00098964 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

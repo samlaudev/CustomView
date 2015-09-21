@@ -7,7 +7,7 @@
         <!--扫描二维码-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -35,7 +35,7 @@
         <!--QR Code-->
         <scene sceneID="6el-nw-fmb">
             <objects>
-                <viewController id="aOl-Nb-7oY" sceneMemberID="viewController">
+                <viewController id="aOl-Nb-7oY" customClass="ScannerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ikd-TW-cIq"/>
                         <viewControllerLayoutGuide type="bottom" id="i9f-Q0-AKj"/>
