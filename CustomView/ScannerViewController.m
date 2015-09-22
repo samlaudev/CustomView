@@ -7,8 +7,11 @@
 //
 
 #import "ScannerViewController.h"
+#import "ScannerView.h"
 
 @interface ScannerViewController ()
+
+@property (strong, nonatomic) ScannerView *scannerView;
 
 @end
 
@@ -17,9 +20,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    // 构建view hierarchy
+    [self buildViewHierarchy];
 }
 
+- (void)buildViewHierarchy
+{
+    [self.view addSubview:self.scannerView];
+}
+
+#pragma mark - Custom Accessors
+- (ScannerView *)scannerView
+{
+    if (!_scannerView) {
+        _scannerView = [[ScannerView alloc] initWithFrame:self.view.bounds];
+    }
+    return _scannerView;
+}
 
 
 @end

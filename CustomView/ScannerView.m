@@ -10,5 +10,14 @@
 
 @implementation ScannerView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (!self) {
+        return nil;
+    }
+
+    return self;
+}
 
 @end
