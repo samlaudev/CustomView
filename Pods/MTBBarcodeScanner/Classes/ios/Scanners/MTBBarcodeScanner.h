@@ -49,6 +49,23 @@ typedef NS_ENUM(NSUInteger, MTBCamera) {
                                 previewView:(UIView *)previewView;
 
 /**
+ *  Initialize a scanner that will feed the camera input
+ *  into the given UIView. Only codes with a type given in
+ *  the metaDataObjectTypes array will be reported to the result
+ *  block when scanning is started using startScanningWithResultBlock:
+ *
+ *  @see startScanningWithResultBlock:
+ *
+ *  @param metaDataObjectTypes Array of AVMetadataObjectTypes to scan for. Only codes with types given in this array will be reported to the resultBlock.
+ *  @param previewView View that will be overlayed with the live feed from the camera input.
+ *  @param rectOfInterest  that limit your search area.
+ *
+ *  @return An instance of MTBBarcodeScanner
+ */
+- (instancetype)initWithMetadataObjectTypes:(NSArray *)metaDataObjectTypes
+                                previewView:(UIView *)previewView rectOfInterest:(CGRect)rectOfInterest;
+
+/**
  *  Returns whether the camera exists in this device.
  *
  *  @return YES if the device has a camera.

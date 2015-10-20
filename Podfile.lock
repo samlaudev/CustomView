@@ -1,10 +1,13 @@
 PODS:
+  - Masonry (0.6.2)
   - MTBBarcodeScanner (1.6.1)
 
 DEPENDENCIES:
+  - Masonry (~> 0.6.1)
   - MTBBarcodeScanner (~> 1.6.1)
 
 SPEC CHECKSUMS:
+  Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MTBBarcodeScanner: beda75d4c1e2750405f62ee53f7a7ee40bf6825b
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.39.0

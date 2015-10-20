@@ -10,4 +10,17 @@
 
 @interface ScannerView : UIView
 
+#pragma mark - UI properties
+/*
+ @brief 问题按钮
+ */
+@property (strong, nonatomic, readonly) UIButton *problemButton;
+
+#pragma mark - Properties;
+@property (copy, nonatomic) void (^handleResultBlock)(NSString *result);
+
+#pragma mark - Methods
+- (void)startScanning;
+- (void)stopScanning;
+
 @end

@@ -29,11 +29,29 @@
     [self.view addSubview:self.scannerView];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    // 开始扫描
+    [self.scannerView startScanning];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    // 停止扫描
+    [self.scannerView stopScanning];
+}
+
+
 #pragma mark - Custom Accessors
 - (ScannerView *)scannerView
 {
     if (!_scannerView) {
         _scannerView = [[ScannerView alloc] initWithFrame:self.view.bounds];
+        [_scannerView setHandleResultBlock:^(NSString *result) {
+            NSLog(@"result = %@", result);
+        }];
     }
     return _scannerView;
 }

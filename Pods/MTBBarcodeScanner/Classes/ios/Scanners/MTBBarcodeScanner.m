@@ -56,6 +56,13 @@
  */
 @property (nonatomic, weak) UIView *previewView;
 
+/*
+ @property rectOfInterest
+ @abstract
+ limit your search area
+ */
+@property (nonatomic, assign) CGRect rectOfInterest;
+
 /*!
  @property resultBlock
  @abstract
@@ -133,6 +140,25 @@ CGFloat const kFocalPointOfInterestY = 0.5;
 
 - (instancetype)initWithMetadataObjectTypes:(NSArray *)metaDataObjectTypes
                                 previewView:(UIView *)previewView {
+//    NSParameterAssert(metaDataObjectTypes);
+//    NSAssert(metaDataObjectTypes.count > 0,
+//             @"Must initialize MTBBarcodeScanner with at least one metaDataObjectTypes value.");
+//    
+//    self = [super init];
+//    if (self) {
+//        NSAssert(!([metaDataObjectTypes indexOfObject:AVMetadataObjectTypeFace] != NSNotFound),
+//                 @"The type %@ is not supported by MTBBarcodeScanner.", AVMetadataObjectTypeFace);
+//        
+//        _metaDataObjectTypes = metaDataObjectTypes;
+//        _previewView = previewView;
+//        [self addRotationObserver];
+//    }
+//    return self;
+    return [self initWithMetadataObjectTypes:metaDataObjectTypes previewView:previewView rectOfInterest:CGRectZero];
+}
+
+- (instancetype)initWithMetadataObjectTypes:(NSArray *)metaDataObjectTypes
+                                previewView:(UIView *)previewView rectOfInterest:(CGRect)rectOfInterest {
     NSParameterAssert(metaDataObjectTypes);
     NSAssert(metaDataObjectTypes.count > 0,
              @"Must initialize MTBBarcodeScanner with at least one metaDataObjectTypes value.");
@@ -144,6 +170,7 @@ CGFloat const kFocalPointOfInterestY = 0.5;
         
         _metaDataObjectTypes = metaDataObjectTypes;
         _previewView = previewView;
+        _rectOfInterest = rectOfInterest;
         [self addRotationObserver];
     }
     return self;
@@ -313,18 +340,20 @@ CGFloat const kFocalPointOfInterestY = 0.5;
     AVCaptureDeviceInput *input = [self deviceInputForCaptureDevice:captureDevice];
     [self setDeviceInput:input session:newSession];
     
-    // Set an optimized preset for barcode scanning
-    [newSession setSessionPreset:AVCaptureSessionPresetHigh];
-    
-    AVCaptureMetadataOutput *captureOutput = [[AVCaptureMetadataOutput alloc] init];
-    [captureOutput setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    [newSession addOutput:captureOutput];
-    captureOutput.metadataObjectTypes = self.metaDataObjectTypes;
-    
     self.capturePreviewLayer = nil;
     self.capturePreviewLayer = [AVCaptureVideoPreviewLayer layerWithSession:newSession];
     self.capturePreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     self.capturePreviewLayer.frame = self.previewView.bounds;
+    
+    // Set an optimized preset for barcode scanning
+    [newSession setSessionPreset:AVCaptureSessionPresetHigh];
+    AVCaptureMetadataOutput *captureOutput = [[AVCaptureMetadataOutput alloc] init];
+    [captureOutput setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    [newSession addOutput:captureOutput];
+    captureOutput.metadataObjectTypes = self.metaDataObjectTypes;
+    if (!CGRectEqualToRect(self.rectOfInterest, CGRectZero)) {
+        captureOutput.rectOfInterest = self.rectOfInterest;
+    }
     
     [newSession commitConfiguration];
     
